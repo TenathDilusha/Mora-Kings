@@ -1,6 +1,6 @@
-# ♟️ Mora Kings – Mora Chess Website
+# ♟️Mora Chess Website
 
-Official one-page website for **Mora Kings**, representing the **University of Moratuwa Chess Team (Mora Chess)**.
+Official one-page website for **Mora Chess**, representing the **University of Moratuwa Chess Team**.
 
 This project showcases the team’s history, achievements, events, and leadership, and serves as an online presence for chess-related activities at the University of Moratuwa.
 
