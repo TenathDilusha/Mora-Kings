@@ -29,6 +29,85 @@ async function loadAllSections() {
 
   // Initialize after all sections are loaded
   initializeApp();
+  
+  // Initialize enhanced features
+  initializeCountdown();
+  initializeHeroStats();
+}
+
+// Countdown Timer for Events
+function initializeCountdown() {
+  const countdownTimer = document.querySelector('.countdown-timer');
+  if (!countdownTimer) return;
+
+  const targetDate = new Date('2026-04-03T00:00:00').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById('countdown-days').textContent = '00';
+      document.getElementById('countdown-hours').textContent = '00';
+      document.getElementById('countdown-minutes').textContent = '00';
+      document.getElementById('countdown-seconds').textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
+// Animated Number Counter for Hero Stats
+function initializeHeroStats() {
+  const statValues = document.querySelectorAll('.hero-stat .stat-value');
+  if (!statValues.length) return;
+
+  const animateValue = (element, start, end, duration) => {
+    const startTime = performance.now();
+    
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(start + (end - start) * easeOutQuart);
+      
+      element.textContent = current;
+      
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+    
+    requestAnimationFrame(update);
+  };
+
+  // Use Intersection Observer to trigger animation when visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        const target = parseInt(element.dataset.target) || 0;
+        animateValue(element, 0, target, 2000);
+        observer.unobserve(element);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statValues.forEach(stat => observer.observe(stat));
 }
 
 // Initialize all interactive features after sections are loaded
