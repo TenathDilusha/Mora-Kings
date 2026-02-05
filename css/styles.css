@@ -351,33 +351,101 @@ header {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 1;
 }
 
-.floating-piece {
+/* Hacker-style glitch chess pieces */
+.glitch-piece {
   position: absolute;
-  font-size: 4rem;
-  color: rgba(249, 201, 57, 0.08);
-  animation: floatParticle 15s infinite ease-in-out;
-  filter: blur(1px);
-  text-shadow: 0 0 20px rgba(249, 201, 57, 0.2);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: glitchPieceLife 1s steps(1) forwards;
+  text-shadow:
+    0 0 15px rgba(249, 201, 57, 0.3),
+    0 0 40px rgba(249, 201, 57, 0.15),
+    2px 0 0 rgba(249, 201, 57, 0.3),
+    -2px 0 0 rgba(249, 201, 57, 0.3);
+  filter: brightness(1.1);
 }
 
-.fp-1 { top: 10%; left: 10%; animation-delay: 0s; }
-.fp-2 { top: 20%; right: 15%; animation-delay: -3s; font-size: 3rem; }
-.fp-3 { top: 60%; left: 8%; animation-delay: -6s; font-size: 5rem; }
-.fp-4 { bottom: 15%; right: 10%; animation-delay: -9s; font-size: 3.5rem; }
-.fp-5 { top: 75%; left: 20%; animation-delay: -12s; font-size: 4.5rem; }
-.fp-6 { top: 40%; right: 25%; animation-delay: -2s; font-size: 2.5rem; }
+.glitch-piece::before {
+  content: attr(data-piece);
+  position: absolute;
+  top: 0;
+  left: 2px;
+  color: rgba(249, 201, 57, 0.4);
+  opacity: 0.5;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  animation: glitchSlice1 0.3s infinite steps(1);
+}
 
-@keyframes floatParticle {
-  0%, 100% { 
-    transform: translateY(0) rotate(0deg); 
-    opacity: 0.06; 
-  }
-  50% { 
-    transform: translateY(-40px) rotate(180deg); 
-    opacity: 0.12; 
-  }
+.glitch-piece::after {
+  content: attr(data-piece);
+  position: absolute;
+  top: 0;
+  left: -2px;
+  color: rgba(249, 201, 57, 0.4);
+  opacity: 0.5;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  animation: glitchSlice2 0.3s infinite steps(1);
+}
+
+/* Scanline overlay on each piece */
+.glitch-piece .scanlines {
+  position: absolute;
+  inset: -10%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(249, 201, 57, 0.03) 2px,
+    rgba(249, 201, 57, 0.03) 4px
+  );
+  pointer-events: none;
+  animation: scanFlicker 0.15s infinite steps(2);
+}
+
+@keyframes glitchPieceLife {
+  0%   { opacity: 0; transform: scale(0.5) skewX(20deg); }
+  8%   { opacity: 0.15; transform: scale(1.1) skewX(-5deg); }
+  12%  { opacity: 0.05; transform: scale(0.95) skewX(10deg); }
+  15%  { opacity: 0.18; transform: scale(1) skewX(0deg); }
+  25%  { opacity: 0.12; transform: translate(-3px, 2px) skewX(-3deg); }
+  30%  { opacity: 0.15; transform: translate(2px, -1px) skewX(2deg); }
+  40%  { opacity: 0.1; transform: translate(0) skewX(0); }
+  55%  { opacity: 0.06; transform: translate(4px, -2px) skewX(5deg); }
+  60%  { opacity: 0.12; transform: translate(-2px, 3px) skewX(-4deg); }
+  70%  { opacity: 0.08; transform: translate(0); }
+  80%  { opacity: 0.1; transform: translate(-3px, 1px) skewX(8deg); }
+  88%  { opacity: 0.03; transform: translate(3px, -2px) skewX(-6deg); }
+  95%  { opacity: 0.05; transform: scale(0.9) skewX(-10deg); }
+  100% { opacity: 0; transform: scale(0.5) skewX(20deg); }
+}
+
+@keyframes glitchSlice1 {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-3px, 1px); }
+  40%  { transform: translate(2px, -1px); }
+  60%  { transform: translate(-1px, 2px); }
+  80%  { transform: translate(3px, 0); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitchSlice2 {
+  0%   { transform: translate(0); }
+  25%  { transform: translate(3px, -1px); }
+  50%  { transform: translate(-2px, 1px); }
+  75%  { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes scanFlicker {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.8; }
+  100% { opacity: 0.4; }
 }
 
 /* Hero Grid Lines */
@@ -472,7 +540,7 @@ header {
   text-shadow: 0 0 60px rgba(249, 201, 57, 0.4);
 }
 
-/* Glitch Effect */
+/* Glitch Effect - auto triggers periodically */
 .glitch {
   position: relative;
 }
@@ -488,34 +556,38 @@ header {
   opacity: 0;
 }
 
-.glitch:hover::before {
-  animation: glitch-1 0.3s infinite;
+.glitch::before {
+  animation: glitch-1 6s infinite;
   color: #00fff9;
   z-index: -1;
 }
 
-.glitch:hover::after {
-  animation: glitch-2 0.3s infinite;
+.glitch::after {
+  animation: glitch-2 6s infinite;
   color: #ff00c1;
   z-index: -2;
 }
 
 @keyframes glitch-1 {
-  0% { transform: translate(0); opacity: 1; }
-  20% { transform: translate(-2px, 2px); opacity: 1; }
-  40% { transform: translate(-2px, -2px); opacity: 1; }
-  60% { transform: translate(2px, 2px); opacity: 1; }
-  80% { transform: translate(2px, -2px); opacity: 1; }
-  100% { transform: translate(0); opacity: 1; }
+  0%, 84%, 92%, 100% { transform: translate(0); opacity: 0; }
+  85% { transform: translate(-2px, 2px); opacity: 1; }
+  86% { transform: translate(-2px, -2px); opacity: 1; }
+  87% { transform: translate(2px, 2px); opacity: 1; }
+  88% { transform: translate(2px, -2px); opacity: 1; }
+  89% { transform: translate(-2px, 2px); opacity: 1; }
+  90% { transform: translate(2px, -2px); opacity: 1; }
+  91% { transform: translate(0); opacity: 1; }
 }
 
 @keyframes glitch-2 {
-  0% { transform: translate(0); opacity: 1; }
-  20% { transform: translate(2px, -2px); opacity: 1; }
-  40% { transform: translate(2px, 2px); opacity: 1; }
-  60% { transform: translate(-2px, -2px); opacity: 1; }
-  80% { transform: translate(-2px, 2px); opacity: 1; }
-  100% { transform: translate(0); opacity: 1; }
+  0%, 84%, 92%, 100% { transform: translate(0); opacity: 0; }
+  85% { transform: translate(2px, -2px); opacity: 1; }
+  86% { transform: translate(2px, 2px); opacity: 1; }
+  87% { transform: translate(-2px, -2px); opacity: 1; }
+  88% { transform: translate(-2px, 2px); opacity: 1; }
+  89% { transform: translate(2px, -2px); opacity: 1; }
+  90% { transform: translate(-2px, 2px); opacity: 1; }
+  91% { transform: translate(0); opacity: 1; }
 }
 
 .hero-subtitle {
