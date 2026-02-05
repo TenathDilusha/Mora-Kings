@@ -1,7 +1,7 @@
 // Load HTML sections dynamically
 async function loadSection(sectionName, containerId) {
   try {
-    const response = await fetch(`./sections/${sectionName}.html`);
+    const response = await fetch(`../sections/${sectionName}.html`);
     const html = await response.text();
     document.getElementById(containerId).innerHTML = html;
   } catch (error) {

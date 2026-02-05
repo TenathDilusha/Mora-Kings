@@ -1,4 +1,32 @@
 /* ============================================
+   BACK BUTTON (Top Left)
+   ============================================ */
+.back-btn-container {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  z-index: 1001;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: var(--accent);
+  padding: 8px 18px;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+.back-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+/* ============================================
    COMING SOON SECTION (Tournament Page)
    ============================================ */
 .coming-soon-section {
