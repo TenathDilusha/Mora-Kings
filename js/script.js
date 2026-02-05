@@ -1,30 +1,27 @@
 // Load HTML sections dynamically
-async function loadSection(sectionName, containerId) {
+async function loadSection(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  const src = container.getAttribute('data-src');
+  if (!src) return;
+  
   try {
-    const response = await fetch(`./sections/${sectionName}.html`);
+    const response = await fetch(src);
     const html = await response.text();
-    document.getElementById(containerId).innerHTML = html;
+    container.innerHTML = html;
   } catch (error) {
-    console.error(`Error loading ${sectionName}:`, error);
+    console.error(`Error loading section for ${containerId}:`, error);
   }
 }
 
-// Load all sections
+// Load all sections from containers with data-src attribute
 async function loadAllSections() {
-  const sections = [
-    { name: 'header', container: 'header-container' },
-    { name: 'hero', container: 'hero-container' },
-    { name: 'events', container: 'events-container' },
-    { name: 'about', container: 'about-container' },
-    { name: 'achievements', container: 'achievements-container' },
-    { name: 'team', container: 'team-container' },
-    { name: 'contact', container: 'contact-container' },
-    { name: 'footer', container: 'footer-container' }
-  ];
-
+  const containers = document.querySelectorAll('[data-src]');
+  
   // Load all sections
   await Promise.all(
-    sections.map(section => loadSection(section.name, section.container))
+    Array.from(containers).map(container => loadSection(container.id))
   );
 
   // Initialize after all sections are loaded
