@@ -1,7 +1,7 @@
 /* ============================================
    MORA CHESS - Modern Redesign
    Inspired by Codemania v6.0 Style
-   Color Theme: #010024, #f9c939, Black, White
+  Color Theme: #010024, #f9c939, #010018 (Dark Blue), White
    ============================================ */
 
 /* CSS Variables */
@@ -11,7 +11,7 @@
   --accent: #f9c939;
   --accent-light: #ffd700;
   --accent-dark: #d4a82f;
-  --black: #010024;
+  --black: #010018;
   --white: #ffffff;
   --gray-900: #101010;
   --gray-800: #1a1a2e;
@@ -193,7 +193,7 @@ header {
   max-width: 900px;
   margin: 0 auto;
   padding: 12px 32px;
-  background: rgba(1, 0, 36, 0.97);
+  background: rgba(1, 0, 24, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-full);
@@ -204,7 +204,7 @@ header {
 }
 
 .navbar.scrolled {
-  background: rgba(1, 0, 36, 0.99);
+  background: rgba(1, 0, 24, 0.99);
   border-color: rgba(249, 201, 57, 0.1);
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
 }
@@ -779,29 +779,6 @@ header {
   margin-bottom: 64px;
 }
 
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-.section-tag i {
-  color: var(--accent);
-}
-
-.section-tag span {
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -892,7 +869,7 @@ header {
   max-width: 800px;
   margin: 0 auto 64px;
   padding: 32px;
-  background: var(--black);
+  background: #010018;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-xl);
   text-align: center;
@@ -926,7 +903,7 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 16px 24px;
-  background: rgba(249, 201, 57, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(249, 201, 57, 0.1);
   border-radius: var(--radius-lg);
   min-width: 80px;
@@ -978,6 +955,7 @@ header {
   border-radius: var(--radius-xl);
   overflow: hidden;
   transition: var(--transition);
+  background: #010018;
 }
 
 .event-card::before {
@@ -1464,9 +1442,9 @@ header {
    FOOTER
    ============================================ */
 footer {
+  background: black;
   position: relative;
   padding: 80px 5% 32px;
-  background: var(--primary);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1640,7 +1618,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.98);
+    background: rgba(1, 0, 24, 0.98);
     flex-direction: column;
     justify-content: center;
     gap: 16px;
@@ -1818,6 +1796,7 @@ footer {
   border-radius: var(--radius-xl);
   text-align: center;
   transition: var(--transition);
+  background: #010018;
 }
 
 .stat-card:hover {
@@ -1926,6 +1905,7 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-lg);
   transition: var(--transition);
+  background: #010018;
 }
 
 .timeline-item:hover .timeline-content {
@@ -2147,6 +2127,7 @@ footer {
   transition: var(--transition);
   width: 200px;
   text-align: center;
+  background: #010018;
 }
 
 .achiever-card-small:hover {
@@ -2324,6 +2305,7 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-lg);
   transition: var(--transition);
+  background: #010018;
 }
 
 .info-item:hover {

@@ -317,13 +317,6 @@ function initializeGallery() {
     resetAutoScroll();
   });
 
-  // Pause on hover
-  const galleryWrapper = document.querySelector('.gallery-wrapper');
-  if (galleryWrapper) {
-    galleryWrapper.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
-    galleryWrapper.addEventListener('mouseleave', startAutoScroll);
-  }
-
   // Initialize
   updateGallery(false);
   startAutoScroll();
