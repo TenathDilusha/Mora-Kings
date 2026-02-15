@@ -2,10 +2,10 @@
 async function loadSection(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  
+
   const src = container.getAttribute('data-src');
   if (!src) return;
-  
+
   try {
     const response = await fetch(src);
     const html = await response.text();
@@ -18,7 +18,7 @@ async function loadSection(containerId) {
 // Load all sections from containers with data-src attribute
 async function loadAllSections() {
   const containers = document.querySelectorAll('[data-src]');
-  
+
   // Load all sections
   await Promise.all(
     Array.from(containers).map(container => loadSection(container.id))
@@ -26,7 +26,7 @@ async function loadAllSections() {
 
   // Initialize after all sections are loaded
   initializeApp();
-  
+
   // Initialize enhanced features
   initializeCountdown();
   initializeHeroStats();
@@ -73,22 +73,22 @@ function initializeHeroStats() {
 
   const animateValue = (element, start, end, duration) => {
     const startTime = performance.now();
-    
+
     const update = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       const current = Math.floor(start + (end - start) * easeOutQuart);
-      
+
       element.textContent = current;
-      
+
       if (progress < 1) {
         requestAnimationFrame(update);
       }
     };
-    
+
     requestAnimationFrame(update);
   };
 
@@ -112,7 +112,7 @@ function initializeApp() {
   // Mobile Navigation Toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
-  
+
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
@@ -122,10 +122,10 @@ function initializeApp() {
 
   // Smooth Scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if(target) {
+      if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         if (navLinks) {
           navLinks.classList.remove('active');
@@ -138,27 +138,27 @@ function initializeApp() {
   // Active Nav Link on Scroll
   const sections = document.querySelectorAll('section');
   const navItems = document.querySelectorAll('.nav-link');
-  
+
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      if(scrollY >= sectionTop - 100) {
+      if (scrollY >= sectionTop - 100) {
         current = section.getAttribute('id');
       }
     });
-    
+
     navItems.forEach(item => {
       item.classList.remove('active');
-      if(item.getAttribute('href') === '#' + current) {
+      if (item.getAttribute('href') === '#' + current) {
         item.classList.add('active');
       }
     });
 
     // Navbar Background on Scroll
     const navbar = document.querySelector('.navbar');
-    if(navbar) {
-      if(window.scrollY > 50) {
+    if (navbar) {
+      if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
@@ -174,7 +174,7 @@ function initializeApp() {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
+      if (entry.isIntersecting) {
         entry.target.classList.add('animate');
       }
     });
@@ -197,7 +197,7 @@ function initializeGallery() {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const indicatorsContainer = document.getElementById('galleryIndicators');
-  
+
   if (!galleryContainer || !prevBtn || !nextBtn || !indicatorsContainer) {
     return; // Gallery not found, skip initialization
   }
@@ -244,13 +244,13 @@ function initializeGallery() {
     const isMobile = window.innerWidth <= 600;
     const slideWidth = isMobile ? 100 : 100 / 3;
     const offset = currentIndex * slideWidth;
-    
+
     if (transition) {
       galleryContainer.style.transition = 'transform 0.5s ease-in-out';
     } else {
       galleryContainer.style.transition = 'none';
     }
-    
+
     galleryContainer.style.transform = `translateX(-${offset}%)`;
 
     // Update active class for center slide
@@ -277,7 +277,7 @@ function initializeGallery() {
     setTimeout(() => {
       // Check if we're on a clone and need to jump to real slide
       const allSlides = galleryContainer.children.length;
-      
+
       if (currentIndex >= allSlides - 3) {
         // At the end clones, jump to beginning real slides
         currentIndex = 3;
@@ -287,7 +287,7 @@ function initializeGallery() {
         currentIndex = allSlides - 6;
         updateGallery(false);
       }
-      
+
       isTransitioning = false;
     }, 500);
   }
