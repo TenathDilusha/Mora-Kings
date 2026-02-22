@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="64" fill="#0b0b2a"/>
+
+  <g transform="translate(256, 210)">
+    <!-- Crown body -->
+    <path d="
+      M -120,40
+      L -140,-20
+      L -90,-5
+      Q -45,-60 0,-90
+      Q 45,-60 90,-5
+      L 140,-20
+      L 120,40
+      Z
+    " fill="#e8b830"/>
+
+    <!-- Crown band bottom -->
+    <rect x="-122" y="40" width="244" height="18" rx="3" fill="#e8b830"/>
+    <!-- Band line -->
+    <rect x="-122" y="58" width="244" height="16" rx="3" fill="#d4a520"/>
+
+    <!-- Cross on top -->
+    <rect x="-5" y="-130" width="10" height="45" rx="2" fill="#e8b830"/>
+    <rect x="-14" y="-118" width="28" height="10" rx="2" fill="#e8b830"/>
+
+    <!-- Cross top circle -->
+    <circle cx="0" cy="-134" r="6" fill="#e8b830"/>
+
+    <!-- Left orb -->
+    <circle cx="-68" cy="-32" r="12" fill="#e8b830"/>
+
+    <!-- Right orb -->
+    <circle cx="68" cy="-32" r="12" fill="#e8b830"/>
+  </g>
+
+  <!-- MORA text -->
+  <text x="256" y="355" text-anchor="middle"
+    font-family="'Didot', 'Playfair Display', 'Georgia', serif"
+    font-size="72" font-weight="400" fill="#e8b830"
+    letter-spacing="12">MORA</text>
+
+  <!-- CHESS text -->
+  <text x="256" y="425" text-anchor="middle"
+    font-family="'Didot', 'Playfair Display', 'Georgia', serif"
+    font-size="72" font-weight="400" fill="#e8b830"
+    letter-spacing="12">CHESS</text>
+</svg>
