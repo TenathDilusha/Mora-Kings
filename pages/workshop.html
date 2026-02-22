@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Workshop - Mora Chess</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="stylesheet" href="../css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-  <div class="bg-animation">
-    <div class="chess-piece piece-1">♔</div>
-    <div class="chess-piece piece-2">♕</div>
-    <div class="chess-piece piece-3">♗</div>
-    <div class="chess-piece piece-4">♘</div>
-    <div class="chess-piece piece-5">♖</div>
-  </div>
+
 
   <header>
     <nav class="navbar">
@@ -38,35 +37,399 @@
       </ul>
     </nav>
   </header>
-  <div class="coming-soon-section">
-    <i class="fas fa-chess-king coming-soon-icon"></i>
-    <h1 class="coming-soon-title">Coming Soon</h1>
-    <p class="coming-soon-text">Workshop details will be available here soon. Stay tuned!</p>
+  <!-- Workshop Intro -->
+  <div class="workshop-intro-text">
+    <div class="section-header">
+      <h2 class="section-title">Coaching Camp <span class="accent">Series</span></h2>
+      <div class="title-decoration">
+        <span></span>
+        <i class="fas fa-chess-king"></i>
+        <span></span>
+      </div>
+    </div>
+    <p class="workshop-intro-desc">
+      An exclusive coaching camp to level up your game, led by top Sri Lankan players and an
+      International Master. Attack smarter, defend stronger, and sharpen every phase of your chess.
+    </p>
+    <p class="workshop-intro-meta">
+      <i class="fas fa-check-circle"></i> <strong>6 FREE Sessions</strong>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <i class="fas fa-calendar-alt"></i> <strong>Feb 25 – Mar 26</strong>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <i class="fas fa-clock"></i> <strong>7:00 PM – 8:30 PM</strong>
+    </p>
+    <p class="workshop-intro-alert">
+      Sessions 05 &amp; 06 are <strong>exclusive to Early Bird registrants</strong>
+    </p>
   </div>
 
-  <script>
-    // Mobile Navigation Toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        navToggle.classList.toggle('active');
-      });
-    }
+  <section class="workshop-timeline-section">
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if(navbar) {
-        if(window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
+    <div class="timeline">
+
+      <!-- Session 01 -->
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-chess-pawn"></i></div>
+        <div class="timeline-content" data-session="1">
+          <span class="timeline-year">Session 01</span>
+          <h3>Attacking Ideas with <br>Isolated Queen's Pawn</h3>
+          <div class="contact-person-card" style="background-image:url('../images/thejake.jpeg')">
+            <div class="person-info"><h3>Thejake Dissanayake</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>2015</strong></div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> 25 February 2026</span>
+            <span><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</span>
+          </div>
+          <button class="btn-learn-more" data-session="1"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-chess-knight"></i></div>
+        <div class="timeline-content" data-session="2">
+          <span class="timeline-year">Session 02</span>
+          <h3>Defensive Play</h3>
+          <div class="contact-person-card" style="background-image:url('../images/tuan.jpeg'); background-position:center 20%">
+            <div class="person-info"><h3>Tuan Ehshan Pallie</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>1829</strong></div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> 4 March 2026</span>
+            <span><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</span>
+          </div>
+          <button class="btn-learn-more" data-session="2"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-chess-bishop"></i></div>
+        <div class="timeline-content" data-session="3">
+          <span class="timeline-year">Session 03</span>
+          <h3>Piece Play</h3>
+          <div class="contact-person-card" style="background-image:url('../images/aloka.jpeg'); background-position:center 15%">
+            <div class="person-info"><h3>Aloka Fernando</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>1805</strong></div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> 11 March 2026</span>
+            <span><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</span>
+          </div>
+          <button class="btn-learn-more" data-session="3"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-chess-rook"></i></div>
+        <div class="timeline-content" data-session="4">
+          <span class="timeline-year">Session 04</span>
+          <h3>Rook Endings</h3>
+          <div class="contact-person-card" style="background-image:url('../images/sijja_ayya.jpg'); background-position:center 20%">
+            <div class="person-info"><h3>Sithija Lahiru</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>1895</strong></div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> 18 March 2026</span>
+            <span><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</span>
+          </div>
+          <button class="btn-learn-more" data-session="4"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-chess-queen"></i></div>
+        <div class="timeline-content" data-session="5">
+          <span class="timeline-year">Session 05 <span class="earlybird-tag">⭐ Early Bird</span></span>
+          <h3>Attacking the King</h3>
+          <div class="contact-person-card" style="background-image:url('../images/dabare.jpeg'); background-position:center 25%">
+            <div class="person-info"><h3>Maheesha Dabarera</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>2002</strong></div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> 25 March 2026</span>
+            <span><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</span>
+          </div>
+          <button class="btn-learn-more" data-session="5"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-chess-king"></i></div>
+        <div class="timeline-content" data-session="6">
+          <span class="timeline-year">Session 06 <span class="earlybird-tag">⭐ Early Bird</span></span>
+          <h3>Bishop v Knight and Double Bishops</h3>
+          <div class="contact-person-card" style="background-image:url('../images/harshsana.jpeg'); background-position:center 55%">
+            <div class="person-info"><h3>Harshana Thilakarathne</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>2446</strong></div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> 26 March 2026</span>
+            <span><i class="fas fa-clock"></i> 7:00 PM - 8:30 PM</span>
+          </div>
+          <button class="btn-learn-more" data-session="6"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+
+      <!-- Slide Panel Overlay -->
+      <div class="panel-overlay" id="panelOverlay"></div>
+
+      <!-- Slide Panel -->
+      <div class="slide-panel" id="slidePanel">
+        <div class="panel-header">
+          <button class="panel-close" id="panelClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="panel-inner" id="panelInner"></div>
+      </div>
+
+      <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+          navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+          });
         }
-      }
-    });
-  </script>
+        window.addEventListener('scroll', () => {
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+          }
+        });
+
+        // Session panel data
+        const sessionData = {
+          1: {
+            tag: 'Session 01',
+            title: 'Attacking Ideas with Isolated Queen\'s Pawn',
+            image: '../images/thejake.jpeg',
+            body: `
+          <div class="contact-person-card" style="background-image:url('../images/thejake.jpeg')">
+            <div class="person-info">
+              <span class="panel-session-tag">Session 01</span>
+              <h2 class="panel-title">Attacking Ideas with<br>Isolated Queen's Pawn</h2>
+              <p class="panel-name">AIM Thejake Dissanayake</p>
+              <p class="panel-role">Former National Youth Chess Champion &amp; National Player</p>
+              <p class="panel-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>2015</strong></p>
+            </div>
+          </div>
+          <p class="panel-desc">Ready to learn how to convert Isolated Queen's Pawn positions into winning positions? Join Session 01 of the Road to Mora Kings Coaching Camp Series.</p>
+          <div class="panel-meta">
+            <div><i class="fas fa-calendar-alt"></i> Wednesday, 25th February 2026</div>
+            <div><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</div>
+            <div><i class="fas fa-desktop"></i> Free Session via Zoom</div>
+          </div>
+          <div class="panel-links">
+            <p class="panel-links-title"><i class="fas fa-link"></i> For more information</p>
+            <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+            <a href="https://www.facebook.com/MoraChess/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        `
+          },
+          2: {
+            tag: 'Session 02',
+            title: 'Defensive Play',
+            image: '../images/tuan.jpeg',
+            body: `
+          <div class="contact-person-card" style="background-image:url('../images/tuan.jpeg'); background-position:center 20%">
+            <div class="person-info">
+              <span class="panel-session-tag">Session 02</span>
+              <h2 class="panel-title">Defensive Play</h2>
+              <p class="panel-name">Tuan Ehshan Pallie</p>
+              <p class="panel-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>1829</strong></p>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <div><i class="fas fa-calendar-alt"></i> 4 March 2026</div>
+            <div><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</div>
+            <div><i class="fas fa-desktop"></i> Free Session via Zoom</div>
+          </div>
+          <div class="panel-links">
+            <p class="panel-links-title"><i class="fas fa-link"></i> For more information</p>
+            <a href="https://morachess.mrt.lk" target="_blank"><i class="fas fa-globe"></i> Website</a>
+            <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+            <a href="https://www.facebook.com/MoraChess/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        `
+          },
+          3: {
+            tag: 'Session 03',
+            title: 'Piece Play',
+            image: '../images/aloka.jpeg',
+            body: `
+          <div class="contact-person-card" style="background-image:url('../images/aloka.jpeg'); background-position:center 15%">
+            <div class="person-info">
+              <span class="panel-session-tag">Session 03</span>
+              <h2 class="panel-title">Piece Play</h2>
+              <p class="panel-name">Aloka Fernando</p>
+              <p class="panel-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>1805</strong></p>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <div><i class="fas fa-calendar-alt"></i> 11 March 2026</div>
+            <div><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</div>
+            <div><i class="fas fa-desktop"></i> Free Session via Zoom</div>
+          </div>
+          <div class="panel-links">
+            <p class="panel-links-title"><i class="fas fa-link"></i> For more information</p>
+            <a href="https://morachess.mrt.lk" target="_blank"><i class="fas fa-globe"></i> Website</a>
+            <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+            <a href="https://www.facebook.com/MoraChess/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        `
+          },
+          4: {
+            tag: 'Session 04',
+            title: 'Rook Endings',
+            image: '../images/sijja_ayya.jpg',
+            body: `
+          <div class="contact-person-card" style="background-image:url('../images/sijja_ayya.jpg'); background-position:center 20%">
+            <div class="person-info">
+              <span class="panel-session-tag">Session 04</span>
+              <h2 class="panel-title">Rook Endings</h2>
+              <p class="panel-name">Sithija Lahiru</p>
+              <p class="panel-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>1895</strong></p>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <div><i class="fas fa-calendar-alt"></i> 18 March 2026</div>
+            <div><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</div>
+            <div><i class="fas fa-desktop"></i> Free Session via Zoom</div>
+          </div>
+          <div class="panel-links">
+            <p class="panel-links-title"><i class="fas fa-link"></i> For more information</p>
+            <a href="https://morachess.mrt.lk" target="_blank"><i class="fas fa-globe"></i> Website</a>
+            <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+            <a href="https://www.facebook.com/MoraChess/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        `
+          },
+          5: {
+            tag: 'Session 05 ⭐ Early Bird',
+            title: 'Attacking the King',
+            image: '../images/dabare.jpeg',
+            body: `
+          <div class="contact-person-card" style="background-image:url('../images/dabare.jpeg'); background-position:center 25%">
+            <div class="person-info">
+              <span class="panel-session-tag">Session 05 ⭐ Early Bird</span>
+              <h2 class="panel-title">Attacking the King</h2>
+              <p class="panel-name">Maheesha Dabarera</p>
+              <p class="panel-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>2002</strong></p>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <div><i class="fas fa-calendar-alt"></i> 25 March 2026</div>
+            <div><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</div>
+            <div><i class="fas fa-desktop"></i> Exclusive Early Bird Session via Zoom</div>
+          </div>
+          <div class="panel-links">
+            <p class="panel-links-title"><i class="fas fa-link"></i> For more information</p>
+            <a href="https://morachess.mrt.lk" target="_blank"><i class="fas fa-globe"></i> Website</a>
+            <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+            <a href="https://www.facebook.com/MoraChess/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        `
+          },
+          6: {
+            tag: 'Session 06 ⭐ Early Bird',
+            title: 'Bishop v Knight and Double Bishops',
+            image: '../images/harshsana.jpeg',
+            body: `
+          <div class="contact-person-card" style="background-image:url('../images/harshsana.jpeg'); background-position:center 55%">
+            <div class="person-info">
+              <span class="panel-session-tag">Session 06 ⭐ Early Bird</span>
+              <h2 class="panel-title">Bishop v Knight and<br>Double Bishops</h2>
+              <p class="panel-name">Harshana Thilakarathne</p>
+              <p class="panel-rating"><i class="fas fa-chess"></i> Peak Rating: <strong>2446</strong></p>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <div><i class="fas fa-calendar-alt"></i> 26 March 2026</div>
+            <div><i class="fas fa-clock"></i> 7:00 PM – 8:30 PM</div>
+            <div><i class="fas fa-desktop"></i> Exclusive Early Bird Session via Zoom</div>
+          </div>
+          <div class="panel-links">
+            <p class="panel-links-title"><i class="fas fa-link"></i> For more information</p>
+            <a href="https://morachess.mrt.lk" target="_blank"><i class="fas fa-globe"></i> Website</a>
+            <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+            <a href="https://www.facebook.com/MoraChess/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          </div>
+        `
+          }
+        };
+
+        // Session end times – a session is considered done once this moment has passed
+        const sessionDates = {
+          1: new Date('2026-02-25T20:30:00'),
+          2: new Date('2026-03-04T20:30:00'),
+          3: new Date('2026-03-11T20:30:00'),
+          4: new Date('2026-03-18T20:30:00'),
+          5: new Date('2026-03-25T20:30:00'),
+          6: new Date('2026-03-26T20:30:00')
+        };
+
+        function updateSessionButtons() {
+          const now = new Date();
+          const orderedIds = [1, 2, 3, 4, 5, 6];
+
+          // Find the first session that hasn't ended yet — that's the "next" session
+          const nextSessionId = orderedIds.find(id => sessionDates[id] > now) ?? null;
+
+          document.querySelectorAll('[data-session]').forEach(btn => {
+            if (!btn.classList.contains('btn-learn-more') && !btn.classList.contains('btn-coming-soon')) return;
+            const id = parseInt(btn.dataset.session);
+            const isPast = sessionDates[id] <= now;
+            const isNext = id === nextSessionId;
+
+            if (isPast || isNext) {
+              btn.className = 'btn-learn-more';
+              btn.innerHTML = '<i class="fas fa-arrow-right"></i> Learn More';
+              btn.disabled = false;
+            } else {
+              btn.className = 'btn-coming-soon';
+              btn.innerHTML = '<i class="fas fa-clock"></i> Coming Soon';
+              btn.disabled = true;
+            }
+          });
+        }
+
+        updateSessionButtons();
+
+        const panel = document.getElementById('slidePanel');
+        const overlay = document.getElementById('panelOverlay');
+        const panelClose = document.getElementById('panelClose');
+        const panelInner = document.getElementById('panelInner');
+
+        function openPanel(sessionId) {
+          const data = sessionData[sessionId];
+          if (!data) return;
+          panelInner.innerHTML = `
+        ${data.body}
+      `;
+          const scrollY = window.scrollY;
+          document.body.style.top = `-${scrollY}px`;
+          panel.classList.add('open');
+          overlay.classList.add('active');
+          document.body.classList.add('panel-open');
+        }
+
+        function closePanel() {
+          const scrollY = Math.abs(parseInt(document.body.style.top || '0'));
+          panel.classList.remove('open');
+          overlay.classList.remove('active');
+          document.body.classList.remove('panel-open');
+          document.body.style.top = '';
+          window.scrollTo(0, scrollY);
+        }
+
+        document.querySelectorAll('.btn-learn-more').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openPanel(btn.dataset.session);
+          });
+        });
+
+        // Re-check button states every minute in case the page stays open across a session boundary
+        setInterval(updateSessionButtons, 60000);
+
+        panelClose.addEventListener('click', closePanel);
+        overlay.addEventListener('click', closePanel);
+      </script>
 </body>
+
 </html>
