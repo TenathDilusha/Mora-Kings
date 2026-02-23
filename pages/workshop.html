@@ -15,6 +15,7 @@
 
 <body>
 
+  <div class="floating-orbs"></div>
 
   <header>
     <nav class="navbar">
@@ -62,6 +63,7 @@
       Sessions 05 &amp; 06 are <strong>exclusive to Early Bird registrants</strong>
     </p>
   </div>
+
 
   <section class="workshop-timeline-section">
 
@@ -162,6 +164,24 @@
             <span><i class="fas fa-clock"></i> 7:00 PM - 8:30 PM</span>
           </div>
           <button class="btn-learn-more" data-session="6"><i class="fas fa-arrow-right"></i> Learn More</button>
+        </div>
+      </div>
+
+      <!-- Mora Kings Chess Tournament -->
+      <div class="timeline-item">
+        <div class="timeline-marker"><i class="fas fa-trophy"></i></div>
+        <div class="timeline-content" data-session="tournament">
+          <span class="timeline-year">What's Next</span>
+          <h3>Mora Kings Chess Tournament</h3>
+          <div class="contact-person-card" style="background-image:url('../images/chess_logo.jpg'); background-position:center 40%">
+            <div class="person-info"><h3>Mora Chess Club</h3></div>
+          </div>
+          <div class="workshop-card-rating"><i class="fas fa-chess-king"></i> Annual Event</div>
+          <div class="workshop-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
+            <span><i class="fas fa-map-marker-alt"></i> University of Moratuwa</span>
+          </div>
+          <a href="./tournament.html" class="btn-learn-more"><i class="fas fa-arrow-right"></i> View Tournament</a>
         </div>
       </div>
 
@@ -353,7 +373,6 @@
           }
         };
 
-        // Session end times – a session is considered done once this moment has passed
         const sessionDates = {
           1: new Date('2026-02-25T20:30:00'),
           2: new Date('2026-03-04T20:30:00'),
@@ -430,6 +449,72 @@
         panelClose.addEventListener('click', closePanel);
         overlay.addEventListener('click', closePanel);
       </script>
+
+    </div>
+  </section>
+
+  <div class="join-community-banner">
+    <div class="join-banner-inner">
+      <span class="join-banner-tag"><i class="fas fa-chess-king"></i> Stay Connected</span>
+      <h2 class="join-banner-title">Join the <span class="accent">Mora Chess</span> Community</h2>
+      <p class="join-banner-desc">
+        Get session updates, tournament news, and exclusive content straight to your feed.
+        Follow us and be the first to know what's next on the board.
+      </p>
+      <div class="join-banner-buttons">
+        <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank" rel="noopener" class="join-btn join-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Join WhatsApp Channel
+        </a>
+        <a href="https://www.facebook.com/MoraChess/" target="_blank" rel="noopener" class="join-btn join-btn-facebook">
+          <i class="fab fa-facebook-f"></i> Follow on Facebook
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="../images/chess_logo.jpg" alt="Mora Chess Logo">
+          <div class="logo-text">
+            <span class="logo-main">MORA</span>
+            <span class="logo-sub">CHESS</span>
+          </div>
+        </div>
+        <p>Mastering Strategy, Building Champions</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/MoraChess" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:uomchess@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://whatsapp.com/channel/0029VbCNJOmF1YlPLU90pQ47" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#achievements">Achievements</a></li>
+          <li><a href="../index.html#events">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="../index.html#team">Team</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../index.html#contact">Join Us</a></li>
+          <li><a href="./tournament.html">Tournament</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Mora Chess. All rights reserved.</p>
+      <p>Made with ♟️ by Mora Kings</p>
+    </div>
+  </footer>
+
 </body>
 
 </html>
