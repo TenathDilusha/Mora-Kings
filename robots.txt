@@ -1,0 +1,5 @@
+<!-- filepath: robots.txt -->
+User-agent: *
+Allow: /
+
+Sitemap: https://morachess.mrt.lk/sitemap.xml
