@@ -11,3 +11,7 @@ Mora Chess is the official chess team of the **University of Moratuwa**, one of 
 The team actively participates in inter-university, national, and international chess tournaments, promoting strategic thinking and sportsmanship among students.
 
 ---
+## SEO
+meta tags added, primary seo tags + open graph, (index.html, tournaments.html, workshop.html)
+*** didn't add structured data yet, tournament.html line 67: <script type = "application/ld+json> { rest }
+sitemap.xml created
