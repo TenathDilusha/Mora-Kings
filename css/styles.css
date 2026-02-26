@@ -416,6 +416,19 @@ body {
   font-weight: 700;
 }
 
+.title-badge {
+  display: inline-block;
+  font-size: 0.65em;
+  font-weight: 700;
+  color: black;
+  background: white;
+  border-radius: 4px;
+  padding: 1px 5px;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
 .workshop-meta-row {
   display: flex;
   flex-direction: column;
