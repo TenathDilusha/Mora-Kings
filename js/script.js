@@ -30,6 +30,131 @@ async function loadAllSections() {
   // Initialize enhanced features
   initializeCountdown();
   initializeHeroStats();
+  initializeNextSessionCard();
+}
+
+// =============================
+// Dynamic Next Session Card
+// =============================
+function initializeNextSessionCard() {
+  const nextSessionCard = document.querySelector('.workshop-next-session');
+  if (!nextSessionCard) return;
+
+  // Session schedule data
+  const sessions = [
+    {
+      title: "Attacking Ideas with Isolated Queen's Pawn",
+      date: '2026-02-25',
+      day: 'Wednesday',
+      time: '7:00 PM – 8:30 PM',
+      datetime: '2026-02-25T19:00:00',
+      link: 'https://cuny.zoom.us/j/82088123740?pwd=By7XLB4A3c2i58MKmynn4kvtJ1d8RM.1',
+      linkLabel: 'Join via Zoom',
+    },
+    {
+      title: 'Defensive Play',
+      date: '2026-03-04',
+      day: 'Wednesday',
+      time: '7:00 PM – 8:30 PM',
+      datetime: '2026-03-04T19:00:00',
+      link: 'https://cuny.zoom.us/j/82088123740?pwd=By7XLB4A3c2i58MKmynn4kvtJ1d8RM.1',
+      linkLabel: 'Join via Zoom',
+    },
+    {
+      title: 'Piece Play',
+      date: '2026-03-11',
+      day: 'Wednesday',
+      time: '7:00 PM – 8:30 PM',
+      datetime: '2026-03-11T19:00:00',
+      link: 'https://cuny.zoom.us/j/82088123740?pwd=By7XLB4A3c2i58MKmynn4kvtJ1d8RM.1',
+      linkLabel: 'Join via Zoom',
+    },
+    {
+      title: 'Rook Endings',
+      date: '2026-03-18',
+      day: 'Wednesday',
+      time: '7:00 PM – 8:30 PM',
+      datetime: '2026-03-18T19:00:00',
+      link: 'https://cuny.zoom.us/j/82088123740?pwd=By7XLB4A3c2i58MKmynn4kvtJ1d8RM.1',
+      linkLabel: 'Join via Zoom',
+    },
+    {
+      title: 'Attacking the King',
+      date: '2026-03-25',
+      day: 'Wednesday',
+      time: '7:00 PM – 8:30 PM',
+      datetime: '2026-03-25T19:00:00',
+      link: 'https://cuny.zoom.us/j/82088123740?pwd=By7XLB4A3c2i58MKmynn4kvtJ1d8RM.1',
+      linkLabel: 'Join via Zoom',
+    },
+    {
+      title: 'Bishop v Knight and Double Bishops',
+      date: '2026-03-26',
+      day: 'Thursday',
+      time: '7:00 PM – 8:30 PM',
+      datetime: '2026-03-26T19:00:00',
+      link: 'https://cuny.zoom.us/j/82088123740?pwd=By7XLB4A3c2i58MKmynn4kvtJ1d8RM.1',
+      linkLabel: 'Join via Zoom',
+    },
+  ];
+
+  function getNextSession() {
+    const now = new Date();
+    return sessions.find(session => new Date(session.datetime) > now);
+  }
+
+  function renderNextSession() {
+    const session = getNextSession();
+    if (!session) {
+      nextSessionCard.innerHTML = `
+        <div class="wns-label"><i class="fas fa-chess-pawn"></i> Next Session</div>
+        <div class="wns-session-info">
+          <h3 class="wns-session-title">All sessions are over!</h3>
+        </div>
+        <div class="wns-divider"></div>
+        <div class="wns-schedule">
+          <div class="wns-schedule-row">
+            <i class="fas fa-calendar-alt"></i>
+            <span>See you at the Tournament!</span>
+          </div>
+        </div>
+      `;
+      return;
+    }
+    nextSessionCard.innerHTML = `
+      <div class="wns-label"><i class="fas fa-chess-pawn"></i> Next Session</div>
+      <div class="wns-session-info">
+        <h3 class="wns-session-title">${session.title}</h3>
+      </div>
+      <div class="wns-divider"></div>
+      <div class="wns-schedule">
+        <div class="wns-schedule-row">
+          <i class="fas fa-calendar-alt"></i>
+          <span>${session.day}, ${formatDate(session.date)}</span>
+        </div>
+        <div class="wns-schedule-row">
+          <i class="fas fa-clock"></i>
+          <span>${session.time}</span>
+        </div>
+      </div>
+      <a href="${session.link}" target="_blank" rel="noopener" class="zoom-btn-hero">
+        <span class="zoom-btn-pulse"></span>
+        <i class="fas fa-video"></i>
+        <span>${session.linkLabel}</span>
+        <i class="fas fa-arrow-right zoom-arrow"></i>
+      </a>
+    `;
+  }
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return d.toLocaleDateString(undefined, options);
+  }
+
+  renderNextSession();
+  // Update every minute in case session changes
+  setInterval(renderNextSession, 60000);
 }
 
 // Countdown Timer for Events

@@ -196,6 +196,27 @@ body {
   position: relative;
   overflow: hidden;
   min-width: 400px;
+  max-width: 95vw;
+  box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+  .workshop-next-session {
+    min-width: unset;
+    width: 100%;
+    padding: 1.2rem 0.7rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: 0.97rem;
+  }
+  .wns-session-title {
+    font-size: 1.05rem;
+  }
+  .zoom-btn-hero {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.95rem;
+  }
 }
 
 .workshop-next-session::before {
@@ -740,6 +761,43 @@ body.panel-open {
   font-style: italic;
   line-height: 1.6;
   padding: 0 1.8rem;
+}
+
+/* Session ended — grayed out */
+.timeline-content.session-ended {
+  opacity: 0.42;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+.timeline-content.session-ended:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.timeline-item.session-ended-item .timeline-marker {
+  opacity: 0.42;
+  filter: grayscale(1);
+}
+
+.btn-ended {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1.4rem;
+  background: transparent;
+  border: 1px solid rgba(160, 160, 160, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--gray-500);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: default;
+  letter-spacing: 0.04em;
+  pointer-events: none;
 }
 
 /* cursor on cards */
@@ -3644,7 +3702,8 @@ footer {
 
   .timeline-item,
   .timeline-item:nth-child(odd),
-  .timeline-item:nth-child(even) {
+  .timeline-item:nth-child(even),
+  .workshop-timeline-section .timeline-item:nth-child(even) {
     padding-left: 56px;
     padding-right: 0;
     text-align: left;
