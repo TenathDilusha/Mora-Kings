@@ -2002,6 +2002,7 @@ header {
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .event-card {
@@ -2038,6 +2039,9 @@ header {
 
 .event-card.featured {
   border-color: rgba(249, 201, 57, 0.2);
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .event-badge {
@@ -3090,10 +3094,10 @@ footer {
 }
 
 .achievers-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
   max-width: 1400px;
   margin: 0 auto;
 }
