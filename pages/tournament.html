@@ -25,6 +25,217 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .tournament-page {
+      min-height: calc(100vh - 90px);
+      width: 100%;
+      padding: 120px 3vw 64px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tournament-wrapper {
+      width: min(1420px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+
+    .tournament-slide {
+      width: 100%;
+      margin: 0;
+      padding: 26px;
+      border: 1px solid rgba(249, 201, 57, 0.35);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(13, 13, 43, 0.96), rgba(1, 0, 24, 0.95));
+    }
+
+    .slide-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .slide-text {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .title-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .slide-title {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.6rem);
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .slide-desc {
+      margin: 0;
+      color: var(--gray-300);
+      line-height: 1.75;
+      max-width: 64ch;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .fact-chip {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(249, 201, 57, 0.2);
+      color: var(--gray-300);
+      font-size: 0.92rem;
+    }
+
+    .fact-chip i {
+      color: var(--accent);
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .visual-wrap {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .visual-card {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(249, 201, 57, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      min-height: 100%;
+      background: #09071a;
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.5);
+      transform-origin: center;
+      display: block;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .detail-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(249, 201, 57, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    .detail-card h4 {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .icon-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .icon-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gray-300);
+      line-height: 1.5;
+    }
+
+    .icon-list i {
+      color: var(--accent);
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-lines p {
+      margin: 0;
+    }
+
+    .accent-icon {
+      color: var(--accent);
+    }
+
+    @media (max-width: 992px) {
+      .slide-content {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-card img {
+        min-height: 280px;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tournament-page {
+        padding: 100px 4vw 36px;
+      }
+
+      .tournament-slide {
+        padding: 16px;
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-card {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="bg-animation">
@@ -58,11 +269,82 @@
       </ul>
     </nav>
   </header>
-  <div class="coming-soon-section">
-    <i class="fas fa-chess-knight coming-soon-icon"></i>
-    <h1 class="coming-soon-title">Coming Soon</h1>
-    <p class="coming-soon-text">Tournament details will be available here soon. Stay tuned!</p>
-  </div>
+  <section class="tournament-page">
+    <div class="tournament-wrapper">
+      <article class="slide active tournament-slide" role="group" aria-roledescription="slide" aria-label="1 of 1">
+        <div class="slide-content">
+          <div class="slide-text">
+            <div class="title-line">
+              <i class="fas fa-globe"></i>
+              <span>Lichess Online Registration</span>
+            </div>
+            <h2 class="slide-title">MORA Blitz Arena Online Chess Championship</h2>
+            <p class="slide-desc">
+              Registrations are now open. Reserve your seat as soon as possible for a fast-paced arena event on Lichess.
+              Entry fee is LKR 500/= and the deadline is on or before 03 April 2026, 11:59 PM.
+            </p>
+
+            <div class="quick-facts">
+              <div class="fact-chip"><i class="fas fa-calendar-alt"></i> 04 April 2026</div>
+              <div class="fact-chip"><i class="fas fa-clock"></i> 07:00 PM - 09:00 PM</div>
+              <div class="fact-chip"><i class="fas fa-bolt"></i> Time Control: 3 + 2</div>
+              <div class="fact-chip"><i class="fas fa-chess-board"></i> Arena Format</div>
+              <div class="fact-chip"><i class="fas fa-ban"></i> No Berserk Allowed</div>
+              <div class="fact-chip"><i class="fas fa-globe"></i> Platform: Lichess.org</div>
+            </div>
+
+            <div class="cta-row">
+              <a href="https://forms.gle/FEMjqEMQMAmGdvdC6" target="_blank" rel="noopener" class="join-btn join-btn-whatsapp">
+                <i class="fas fa-file-signature"></i> Google Form
+              </a>
+              <a href="https://lichess.org/tournament/r5DSLpyj" target="_blank" rel="noopener" class="join-btn join-btn-facebook">
+                <i class="fas fa-chess-knight"></i> Tournament Link
+              </a>
+            </div>
+          </div>
+
+          <div class="visual-wrap">
+            <div class="visual-card">
+              <img src="../images/lichess-app.jpg" alt="Mora Blitz Arena on Lichess">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="details-grid">
+        <div class="detail-card">
+          <h4>Prizes</h4>
+          <ul class="icon-list">
+            <li><i class="fas fa-crown"></i> Champion: LKR 5000</li>
+            <li><i class="fas fa-medal"></i> First Runner-up: LKR 3000</li>
+            <li><i class="fas fa-medal"></i> Second Runner-up: LKR 2000</li>
+            <li><i class="fas fa-award"></i> Fourth Place: LKR 1000</li>
+            <li><i class="fas fa-award"></i> Fifth Place: LKR 1000</li>
+            <li><i class="fas fa-certificate"></i> Sixth to Tenth Places: Placed E-certificate</li>
+            <li><i class="fas fa-certificate"></i> E-certificate for every participant</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <h4>Bank Details</h4>
+          <ul class="icon-list">
+            <li><i class="fas fa-user"></i> Account Name: G M H Thilakarathne</li>
+            <li><i class="fas fa-credit-card"></i> Account Number: 012200160081678</li>
+            <li><i class="fas fa-university"></i> Bank: People's Bank Kurunegala</li>
+            <li><i class="fas fa-receipt"></i> Upload the bank slip in the Google Form.</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <h4>Contact</h4>
+          <div class="contact-lines">
+            <p><i class="fas fa-phone accent-icon"></i> Maheesha - 0701069675</p>
+            <p><i class="fas fa-phone accent-icon"></i> Gayashan - 0721994505</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
     // Mobile Navigation Toggle
