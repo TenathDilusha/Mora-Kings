@@ -1,3 +1,9 @@
+.btn-learn-more {
+  text-decoration: none !important;
+}
+.btn-learn-more:hover {
+  text-decoration: none !important;
+}
 .workshop-next-session {
   font-family: 'Poppins', sans-serif;
 }
